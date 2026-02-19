@@ -19,7 +19,8 @@ if ! mas account &>/dev/null; then
     echo "  -> [WARN] Not signed in to Mac App Store."
     echo "     Sign in via System Settings > Apple ID, then re-run."
     echo "     Continuing with --skip-mas for now..."
-    BREW_BUNDLE_FLAGS="--without-mas"
+    # BREW_BUNDLE_FLAGS="--without-mas"
+    BREW_BUNDLE_FLAGS=""
 else
     echo "  -> App Store: $(mas account)"
     BREW_BUNDLE_FLAGS=""
