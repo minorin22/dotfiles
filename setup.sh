@@ -54,6 +54,14 @@ run() {
     DOTFILES_DIR="${DOTFILES_DIR}" zsh "${DOTFILES_DIR}/scripts/${script}" 2>&1 | tee -a "$LOG_FILE"
 }
 
+# --- Path ---------------------------------------------------
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
+export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}"
+export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin:$PATH"
+export MANPATH="${HOMEBREW_PREFIX}/share/man:${MANPATH:-}"
+export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
+
 # ---- Execution order (dependencies matter) -----------------
 run "00-xcode-tools.sh"
 run "01-homebrew.sh"
