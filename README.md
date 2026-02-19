@@ -19,8 +19,12 @@ M1Max MacBook Pro 16" (macOS Tahoe / Apple Silicon arm64) のセットアップ�
 
 ### 1. このリポジトリをクローン
 
+新しいMacでは `git` コマンドが Xcode Command Line Tools（CLT）のインストールを自動的に促します。
+ダイアログが出たらインストールし、完了後に再度クローンしてください。
+
 ```zsh
-git clone <your-repo-url> ~/dotfiles
+# HTTPSでクローン（初回セットアップ時はSSHキー未設定のためHTTPS推奨）
+git clone https://github.com/minorin22/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
@@ -29,9 +33,6 @@ cd ~/dotfiles
 ```zsh
 zsh setup.sh
 ```
-
-初回は Xcode Command Line Tools のインストールを求められます。
-ダイアログが出たらインストールし、完了後に再実行してください。
 
 ### 3. ログアウト → 再ログイン
 
