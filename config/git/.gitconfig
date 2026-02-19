@@ -1,0 +1,56 @@
+[core]
+	editor = code --wait
+	autocrlf = input
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	pager = delta
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
+
+[push]
+	default = current
+	autoSetupRemote = true
+
+[fetch]
+	prune = true
+
+[merge]
+	conflictstyle = zdiff3
+
+[diff]
+	algorithm = histogram
+	colorMoved = zebra
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	light = false
+	side-by-side = true
+	line-numbers = true
+	syntax-theme = Monokai Extended
+
+[color]
+	ui = auto
+
+[alias]
+	st   = status -sb
+	co   = checkout
+	br   = branch
+	lg   = log --oneline --graph --decorate --all
+	ll   = log --pretty=format:'%C(yellow)%h%Creset %C(blue)%ad%Creset %s %C(green)<%an>%Creset' --date=short
+	undo = reset --soft HEAD~1
+	wip  = !git add -A && git commit -m 'WIP: work in progress'
+
+[credential]
+	helper = osxkeychain
+
+[filter "lfs"]
+	clean    = git-lfs clean -- %f
+	smudge   = git-lfs smudge -- %f
+	process  = git-lfs filter-process
+	required = true

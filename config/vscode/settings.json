@@ -1,0 +1,90 @@
+{
+  "editor.fontSize": 15,
+  "editor.fontFamily": "JetBrains Mono, Monaco, Menlo, monospace",
+  "editor.fontLigatures": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  "workbench.colorTheme": "Monokai-Japan",
+  "workbench.iconTheme": "file-icons",
+
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "JetBrains Mono, Monaco",
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.packageManager": "yarn",
+
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+
+  "svelte.language-server.runtime": "",
+
+  "python.defaultInterpreterPath": "python3",
+  "python.terminal.activateEnvironment": true,
+
+  "latex-workshop.latex.outDir": "out",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.snm",
+    "*.nav",
+    "*.dvi",
+    "*.synctex.gz"
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": ["-silent", "-outdir=%OUTDIR%", "%DOC%"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": ["latexmk"]
+    }
+  ],
+  "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  "markdown.marp.pdf.outlines": "both",
+  "markdown.marp.exportType": "html",
+  "markdown.marp.html": "all",
+
+  "security.workspace.trust.untrustedFiles": "open"
+}
