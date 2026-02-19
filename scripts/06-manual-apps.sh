@@ -10,7 +10,7 @@ echo "==> [06] Manual Apps"
 # ============================================================
 CMD_EIKANA_VERSION="2.4.2"
 CMD_EIKANA_URL="https://github.com/dominion525/cmd-eikana/releases/download/v${CMD_EIKANA_VERSION}/cmd-eikana-v${CMD_EIKANA_VERSION}-arm64.zip"
-CMD_EIKANA_APP="/Applications/cmd-eikana.app"
+CMD_EIKANA_APP="/Applications/⌘英かな.app"
 
 if [[ -d "${CMD_EIKANA_APP}" ]]; then
     echo "  -> cmd-eikana already installed at ${CMD_EIKANA_APP}"
@@ -22,8 +22,8 @@ else
     curl -fsSL "${CMD_EIKANA_URL}" -o "${TEMP_DIR}/cmd-eikana.zip"
     unzip -q "${TEMP_DIR}/cmd-eikana.zip" -d "${TEMP_DIR}/"
 
-    if [[ -d "${TEMP_DIR}/cmd-eikana.app" ]]; then
-        cp -r "${TEMP_DIR}/cmd-eikana.app" /Applications/
+    if [[ -d "${TEMP_DIR}/⌘英かな.app" ]]; then
+        cp -r "${TEMP_DIR}/⌘英かな.app" /Applications/
         echo "  -> cmd-eikana installed to /Applications/"
     else
         echo "  -> [ERROR] cmd-eikana.app not found in zip. Contents:"
