@@ -29,7 +29,6 @@ fi
 echo "  -> Running brew bundle (this may take a while)..."
 brew bundle \
     --file="${DOTFILES_DIR}/Brewfile" \
-    --no-lock \
     ${BREW_BUNDLE_FLAGS:-}
 
 brew cleanup
