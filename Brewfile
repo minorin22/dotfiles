@@ -72,7 +72,7 @@ brew "vapoursynth"
 # Casks: Terminal & Editors
 # ============================================================
 cask "ghostty"               # Terminal (replaces iterm2)
-cask "font-jetbrains-mono-nerd-font"  # Required for eza --icons
+cask "font-hackgen-nerd"              # CJK + Nerd Font glyphs (for eza --icons etc.)
 cask "visual-studio-code"
 cask "zed"
 

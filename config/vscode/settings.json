@@ -1,7 +1,7 @@
 {
   "editor.fontSize": 15,
-  "editor.fontFamily": "JetBrains Mono, Monaco, Menlo, monospace",
-  "editor.fontLigatures": true,
+  "editor.fontFamily": "HackGen35 Console NF, Monaco, Menlo, monospace",
+  "editor.fontLigatures": false,
   "editor.renderWhitespace": "boundary",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.wordWrap": "on",
@@ -17,7 +17,7 @@
   "workbench.iconTheme": "file-icons",
 
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.fontFamily": "JetBrains Mono, Monaco",
+  "terminal.integrated.fontFamily": "HackGen Console NF, Monaco",
   "terminal.integrated.drawBoldTextInBrightColors": false,
 
   "explorer.confirmDelete": false,

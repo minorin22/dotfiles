@@ -5,15 +5,14 @@
 # ============================================================
 # Font
 # ============================================================
-font-family = "JetBrains Mono"
+font-family = "HackGen Console NF"
 font-size = 14
-font-feature = calt
-font-feature = liga
+# HackGen (Hack-based) にはプログラミングリガチャなし
 
 # ============================================================
 # Window
 # ============================================================
-window-decoration = false
+window-decoration = true
 window-padding-x = 12
 window-padding-y = 8
 macos-option-as-alt = true
@@ -22,7 +21,7 @@ macos-option-as-alt = true
 # Cursor
 # ============================================================
 cursor-style = bar
-cursor-blink = true
+#cursor-blink = true
 cursor-color = #f8f8f2
 cursor-text = #1a1a2e
 
@@ -41,8 +40,8 @@ selection-foreground = #f8f8f2
 # ============================================================
 # Monokai-Japan Color Palette
 # ============================================================
-background = #1a1a2e
-foreground = #f8f8f2
+background = #272727
+foreground = #f8f8f0
 
 # Normal colors (ANSI 0-7)
 palette = 0=#272822

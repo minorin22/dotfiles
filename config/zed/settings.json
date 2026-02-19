@@ -1,10 +1,10 @@
 {
   "theme": "Monokai",
-  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_family": "HackGen35 Console NF",
   "buffer_font_size": 15,
   "buffer_font_features": {
-    "calt": true,
-    "liga": true
+    "calt": false,
+    "liga": false
   },
   "ui_font_family": "System UI",
   "tab_size": 2,
@@ -12,7 +12,7 @@
   "autosave": "on_focus_change",
   "vim_mode": false,
   "terminal": {
-    "font_family": "JetBrains Mono",
+    "font_family": "HackGen Console NF",
     "font_size": 14,
     "shell": {
       "program": "/opt/homebrew/bin/zsh"
