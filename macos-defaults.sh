@@ -30,7 +30,6 @@ defaults write NSGlobalDomain  AppleShowAllExtensions        -bool true
 # ============================================================
 # Screenshots
 # ============================================================
-defaults write com.apple.screencapture location      -string "${HOME}/Downloads"
 defaults write com.apple.screencapture type          -string "png"
 defaults write com.apple.screencapture disable-shadow -bool true
 
