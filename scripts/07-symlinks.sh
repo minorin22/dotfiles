@@ -57,7 +57,9 @@ symlink "${DOTFILES_DIR}/config/vscode/settings.json" \
 
 # ---- Zed ---------------------------------------------------
 symlink "${DOTFILES_DIR}/config/zed/settings.json" \
-    "${HOME}/Library/Application Support/Zed/settings.json"
+    "${HOME}/.config/zed/settings.json"
+symlink "${DOTFILES_DIR}/config/zed/themes" \
+    "${HOME}/.config/zed/themes"
 
 echo ""
 echo "  Symlinks created. Verify with:"

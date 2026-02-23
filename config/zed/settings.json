@@ -1,31 +1,42 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "theme": "Monokai",
-  "buffer_font_family": "HackGen35 Console NF",
-  "buffer_font_size": 15,
-  "buffer_font_features": {
-    "calt": false,
-    "liga": false
+  "edit_predictions": {
+    "provider": "copilot",
   },
-  "ui_font_family": "System UI",
-  "tab_size": 2,
-  "format_on_save": "off",
-  "autosave": "on_focus_change",
-  "vim_mode": false,
+  "agent": {
+    "default_model": {
+      "provider": "claude_agent",
+      "model": "default",
+      "enable_thinking": false,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
   "terminal": {
+    "font_size": 15.0,
     "font_family": "HackGen Console NF",
-    "font_size": 14,
-    "shell": {
-      "program": "/opt/homebrew/bin/zsh"
-    }
+    "font_fallbacks": ["Monaco"],
   },
-  "git": {
-    "inline_blame": {
-      "enabled": true
-    }
+  "base_keymap": "VSCode",
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "buffer_font_fallbacks": ["Monaco", "Menlo"],
+  "buffer_font_family": "HackGen35 Console NF",
+  "auto_indent_on_paste": true,
+  "show_whitespaces": "boundary",
+  "soft_wrap": "editor_width",
+  "tab_size": 2,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Monokai Japan",
   },
-  "languages": {
-    "Python": {
-      "language_servers": ["pyright", "ruff"]
-    }
-  }
 }

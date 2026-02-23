@@ -6,7 +6,7 @@
 # Font
 # ============================================================
 font-family = "HackGen Console NF"
-font-size = 14
+font-size = 15
 # HackGen (Hack-based) にはプログラミングリガチャなし
 
 # ============================================================
@@ -16,12 +16,13 @@ window-decoration = true
 window-padding-x = 12
 window-padding-y = 8
 macos-option-as-alt = true
+background-opacity = 0.85
 
 # ============================================================
 # Cursor
 # ============================================================
-cursor-style = bar
-#cursor-blink = true
+cursor-style = block
+cursor-style-blink = false
 cursor-color = #f8f8f2
 cursor-text = #1a1a2e
 
@@ -30,6 +31,7 @@ cursor-text = #1a1a2e
 # ============================================================
 shell-integration = zsh
 scrollback-limit = 10000
+shell-integration-features = no-cursor,ssh-env
 
 # ============================================================
 # Selection
