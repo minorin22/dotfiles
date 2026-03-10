@@ -7,17 +7,55 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "edit_predictions": {
-    "provider": "copilot",
-  },
   "agent": {
+    "default_profile": "write",
     "default_model": {
-      "provider": "claude_agent",
-      "model": "default",
-      "enable_thinking": false,
+      "provider": "copilot_chat",
+      "model": "gpt-5.3-codex",
+      "enable_thinking": false
     },
     "favorite_models": [],
-    "model_parameters": [],
+    "model_parameters": []
+  },
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true,
+    },
+  },
+  "git_panel": {
+    "tree_view": true,
+  },
+  "project_panel": {
+    "hide_hidden": false,
+    "bold_folder_labels": true,
+    "dock": "left",
+  },
+  "use_system_window_tabs": false,
+  "bottom_dock_layout": "contained",
+  "tabs": {
+    "close_position": "left",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_icon": true,
+  },
+  "status_bar": {
+    "active_encoding_button": "enabled",
+  },
+  "minimap": {
+    "show": "always",
+  },
+  "which_key": {
+    "enabled": false,
+  },
+  "icon_theme": "Catppuccin Frappé",
+  "edit_predictions": {
+    "copilot": {
+      "enable_next_edit_suggestions": true
+    },
+    "provider": "copilot",
   },
   "terminal": {
     "font_size": 15.0,
@@ -34,9 +72,23 @@
   "tab_size": 2,
   "ui_font_size": 16,
   "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Monokai Japan",
+  "theme": "Monokai Japan",
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+    },
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python": {
+          "venvPath": ".",
+          "venv": ".venv",
+          "analysis": {
+            "venvPath": ".",
+          },
+        },
+      },
+    },
   },
 }
