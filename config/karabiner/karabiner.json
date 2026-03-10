@@ -1,0 +1,40 @@
+{
+  "global": { "show_in_menu_bar": false },
+  "profiles": [
+    {
+      "name": "Default",
+      "selected": true,
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Moonlight: ⌘ → Ctrl (left+right)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": ["^com\\.moonlight-stream\\.Moonlight$"]
+                  }
+                ],
+                "from": { "key_code": "left_command" },
+                "to":   [{ "key_code": "left_control" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": ["^com\\.moonlight-stream\\.Moonlight$"]
+                  }
+                ],
+                "from": { "key_code": "right_command" },
+                "to":   [{ "key_code": "right_control" }]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

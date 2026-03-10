@@ -61,6 +61,10 @@ symlink "${DOTFILES_DIR}/config/zed/settings.json" \
 symlink "${DOTFILES_DIR}/config/zed/themes" \
     "${HOME}/.config/zed/themes"
 
+# ---- Karabiner-Elements ------------------------------------
+symlink "${DOTFILES_DIR}/config/karabiner/karabiner.json" \
+    "${HOME}/.config/karabiner/karabiner.json"
+
 echo ""
 echo "  Symlinks created. Verify with:"
 echo "    ls -la ~/.zshrc ~/.gitconfig ~/.config/ghostty/config"

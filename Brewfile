@@ -93,6 +93,8 @@ cask "appcleaner"
 cask "the-unarchiver"
 cask "syntax-highlight"      # Quick Look syntax highlighting
 cask "imhex"                 # Hex editor
+cask "moonlight"             # Remote desktop client for Sunshine (Linux GPU streaming)
+cask "karabiner-elements"   # Moonlight用 ⌘→Ctrl リマップ（app-specific）
 
 # ============================================================
 # Casks: Browser & Peripherals
@@ -190,7 +192,7 @@ vscode "ms-ceintl.vscode-language-pack-ko"
 # ============================================================
 # Intentionally EXCLUDED:
 # - iterm2             → ghostty
-# - karabiner-elements → cmd-eikana (manual install via scripts/06-manual-apps.sh)
+# - karabiner-elements → IMEのみ: cmd-eikana / ⌘リマップ: karabiner-elements（共存）
 # - clipy              → maccy
 # - docker-desktop     → orbstack
 # - discord, slack     → PWA via Chrome
