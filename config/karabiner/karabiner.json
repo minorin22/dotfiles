@@ -7,6 +7,19 @@
       "complex_modifications": {
         "rules": [
           {
+            "description": "CapsLock → left_control (グローバル)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "left_control" }]
+              }
+            ]
+          },
+          {
             "description": "Moonlight: ⌘ → Ctrl (left+right)",
             "manipulators": [
               {
