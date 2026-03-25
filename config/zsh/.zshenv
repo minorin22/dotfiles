@@ -7,5 +7,5 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_CACHE_HOME="${HOME}/.cache"
 
 # Default editor (available to non-interactive shells and scripts)
-export EDITOR="code --wait"
-export VISUAL="code --wait"
+export EDITOR="nvim"
+export VISUAL="nvim"

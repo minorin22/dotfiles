@@ -85,6 +85,8 @@ zsh setup.sh --skip-mas --skip-manual
 | Ghostty | ターミナル（iterm2 の代替） |
 | VSCode | エディタ |
 | Zed | モダンエディタ |
+| Neovim | ターミナルエディタ（LazyVim ベース） |
+| Skim | PDF ビューア（LaTeX SyncTeX 対応） |
 | OrbStack | コンテナ環境（Docker Desktop の代替） |
 | Maccy | クリップボードマネージャー（Clipy の代替） |
 | Obsidian | ノート・ナレッジベース |
@@ -145,9 +147,17 @@ dotfiles/
 │   │   └── config             # Ghostty 設定（Monokai-Japan テーマ）
 │   ├── vscode/
 │   │   └── settings.json      # VSCode 設定
-│   └── zed/
-│       └── settings.json      # Zed 設定
-├── .vimrc                     # Vim 設定（そのまま移行）
+│   ├── zed/
+│   │   └── settings.json      # Zed 設定
+│   └── nvim/                  # Neovim 設定（LazyVim）
+│       ├── init.lua           # ブートストラップ
+│       ├── lazyvim.json       # extras 宣言
+│       ├── colors/
+│       │   └── monokai-japan.lua  # カスタムカラースキーム
+│       └── lua/
+│           ├── config/        # options, keymaps, autocmds
+│           └── plugins/       # プラグイン設定
+├── .vimrc                     # Vim 設定（レガシー、残置）
 └── .latexmkrc                 # LaTeX 設定（そのまま移行）
 ```
 
@@ -182,6 +192,81 @@ eza --version && bat --version && rg --version && fd --version
 uv --version && volta --version && rustc --version
 claude --version
 ```
+
+---
+
+## Neovim (LazyVim)
+
+ターミナルエディタとして [LazyVim](https://www.lazyvim.org/) ベースの Neovim を導入しています。
+
+### 初回セットアップ
+
+```zsh
+# setup.sh 実行後、Neovim を起動するとプラグインが自動インストールされる
+nvim
+# :checkhealth で環境を確認
+```
+
+初回起動時に lazy.nvim が全プラグインをダウンロードし、mason.nvim が LSP サーバーを自動インストールします（数分かかります）。
+
+### 主要キーバインド
+
+| キー | 動作 |
+|------|------|
+| `Space` | リーダーキー（which-key でガイド表示） |
+| `Ctrl-n` | ファイルエクスプローラ（neo-tree）切替 |
+| `Space ff` | ファイル検索（Telescope） |
+| `Space fg` / `Space /` | テキスト検索（ripgrep） |
+| `fb` | バッファ検索 |
+| `fl` | 現在ファイル内の行検索 |
+| `fr` | カーソル位置の単語を全文検索 |
+| `fc` | コミット履歴検索 |
+| `]h` / `[h` | 次の/前の git hunk に移動 |
+| `Space mp` | Markdown プレビュー開始/停止（ブラウザ） |
+| `Space ms` | Marp スライドプレビュー開始 |
+| `Space mS` | Marp スライドプレビュー停止 |
+| `Space ll` | LaTeX コンパイル開始/停止 |
+| `Space lv` | LaTeX PDF 表示（Skim） |
+
+### 対応言語（LSP）
+
+| 言語 | LSP サーバー |
+|------|-------------|
+| C/C++/CUDA | clangd |
+| Python | pyright + ruff |
+| TypeScript/JavaScript | ts_ls |
+| Rust | rust-analyzer |
+| Shell (bash/zsh) | bash-language-server + shellcheck |
+| Markdown | marksman |
+| LaTeX | texlab + vimtex |
+| Verilog/SystemVerilog | svls |
+| JSON/YAML/TOML | LazyVim extras で自動 |
+| Tcl | Tree-sitter ハイライトのみ（成熟 LSP なし） |
+
+### カラースキーム
+
+自作テーマ **Monokai-Japan** を Zed/VSCode/Ghostty と統一して適用しています。
+定義ファイル: `config/nvim/colors/monokai-japan.lua`
+
+### Marp スライドを使う場合
+
+```zsh
+# Marp CLI をインストール
+npm install -g @marp-team/marp-cli
+```
+
+Neovim 内での操作:
+- `<Space>ms` — プレビュー開始（ブラウザが開き、ファイル変更を自動リロード）
+- `<Space>mS` — プレビュー停止
+
+### LaTeX プレビュー
+
+vimtex + Skim で SyncTeX 連携しています。
+
+- Neovim → Skim: `<Space>lv` でフォワードサーチ
+- Skim → Neovim: PDF 上で `Cmd+Shift+Click` でインバースサーチ
+
+Skim の設定（初回のみ）: Skim → 設定 → 同期 → プリセット「カスタム」→ コマンド `nvim`、引数 `--headless -c "VimtexInverseSearch %line '%file'"`
 
 ---
 

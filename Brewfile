@@ -73,6 +73,7 @@ brew "vapoursynth"
 # ============================================================
 cask "ghostty"               # Terminal (replaces iterm2)
 cask "font-hackgen-nerd"              # CJK + Nerd Font glyphs (for eza --icons etc.)
+brew "neovim"                # Terminal editor (LazyVim)
 cask "visual-studio-code"
 cask "zed"
 
@@ -106,6 +107,7 @@ cask "logi-options+"         # Logitech peripherals
 # Casks: LaTeX
 # ============================================================
 cask "mactex-no-gui"
+cask "skim"                  # PDF viewer with SyncTeX (for vimtex)
 
 # ============================================================
 # Mac App Store

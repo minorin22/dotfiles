@@ -44,6 +44,10 @@ symlink "${DOTFILES_DIR}/config/git/.gitconfig" "${HOME}/.gitconfig"
 # ---- Vim ---------------------------------------------------
 symlink "${DOTFILES_DIR}/.vimrc" "${HOME}/.vimrc"
 
+# ---- Neovim -----------------------------------------------
+symlink "${DOTFILES_DIR}/config/nvim" \
+    "${HOME}/.config/nvim"
+
 # ---- LaTeX -------------------------------------------------
 symlink "${DOTFILES_DIR}/.latexmkrc" "${HOME}/.latexmkrc"
 

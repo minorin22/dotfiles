@@ -72,17 +72,20 @@ alias grep='rg'
 #alias find='fd'
 alias tree='tree -CN'
 alias reload='source ~/.zshrc'
+alias vim='nvim'
+alias vi='nvim'
 alias brewup='brew update && brew upgrade && brew cleanup'
+alias gg='lazygit'
 
 # ============================================================
 # PATH (order: most specific first)
 # ============================================================
-export PATH="${HOME}/.local/bin:$PATH"          # uv, local tools
-export PATH="${HOME}/.cargo/bin:$PATH"          # Rust
-
 # volta (Node.js)
 export VOLTA_HOME="${HOME}/.volta"
 export PATH="${VOLTA_HOME}/bin:$PATH"
+
+export PATH="${HOME}/.cargo/bin:$PATH"          # Rust
+export PATH="${HOME}/.local/bin:$PATH"          # uv, claude, local tools
 
 # LaTeX (mactex)
 [[ -d "/Library/TeX/texbin" ]] && export PATH="/Library/TeX/texbin:$PATH"
@@ -122,6 +125,17 @@ fi
 if command -v direnv &>/dev/null; then
     eval "$(direnv hook zsh)"
 fi
+
+# ============================================================
+# Yazi wrapper
+# ============================================================
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    command yazi "$@" --cwd-file="$tmp"
+    IFS= read -r -d '' cwd < "$tmp"
+    [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
+}
 
 # ============================================================
 # miniforge / conda - lazy (NOT auto-activated)
